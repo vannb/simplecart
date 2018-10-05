@@ -1,0 +1,51 @@
+{
+  "parser": "babel-eslint",
+  "extends": "airbnb-base",
+  "env": {
+    "node": true,
+    "es6": true
+  },
+  "globals": {
+    "COUNTER_HTTP_CLIENT_REQUEST": false,
+    "COUNTER_HTTP_CLIENT_RESPONSE": false,
+    "COUNTER_HTTP_SERVER_REQUEST": false,
+    "COUNTER_HTTP_SERVER_RESPONSE": false,
+    "COUNTER_NET_SERVER_CONNECTION": false,
+    "COUNTER_NET_SERVER_CONNECTION_CLOSE": false,
+    "DTRACE_HTTP_CLIENT_REQUEST": false,
+    "DTRACE_HTTP_CLIENT_RESPONSE": false,
+    "DTRACE_HTTP_SERVER_REQUEST": false,
+    "DTRACE_HTTP_SERVER_RESPONSE": false,
+    "DTRACE_NET_SERVER_CONNECTION": false,
+    "DTRACE_NET_STREAM_END": false,
+    "LTTNG_HTTP_CLIENT_REQUEST": false,
+    "LTTNG_HTTP_CLIENT_RESPONSE": false,
+    "LTTNG_HTTP_SERVER_REQUEST": false,
+    "LTTNG_HTTP_SERVER_RESPONSE": false,
+    "LTTNG_NET_SERVER_CONNECTION": false,
+    "LTTNG_NET_STREAM_END": false,
+    "describe": true,
+    "it": true,
+    "before": true,
+    "beforeEach": true,
+    "expect": true,
+    "assert": true
+  },
+  "rules": {
+    "import/extensions": "off",
+    "import/prefer-default-export": "off",
+    "linebreak-style": "off",
+    "max-len": [
+      "error",
+      120,
+      {
+        "ignoreStrings": true,
+        "ignoreRegExpLiterals": true
+      }
+    ],
+    "no-mixed-operators": "off",
+    "no-underscore-dangle": "off",
+    "class-methods-use-this": "off",
+    "prefer-destructuring": "off"
+  }
+}
