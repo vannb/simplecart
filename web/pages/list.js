@@ -13,7 +13,6 @@ export default class List extends Component {
   constructor() {
     super();
     this.state = {
-      cartItems: [],
       query: { order: 'DESC', sortBy: 'createdAt' },
     };
     this.changeOrder = this.changeOrder.bind(this);
@@ -52,7 +51,8 @@ export default class List extends Component {
     const { changeOrder, changeSortBy } = this;
     return (
       <div className="container">
-        {cartItems.count
+        {cartItems
+          ? cartItems.count
           ? <>
             <h1>Cart item list</h1>
             <Form>
@@ -92,8 +92,8 @@ export default class List extends Component {
                 {map(cartItems.rows, cartItem => (<CartItemDetail key={cartItem.id} cartItem={cartItem} />))}
               </tbody>
             </table>
-          </>
-          : <h1>No item yet</h1>}
+          </> : <p>No cart item yet</p>
+          : <p>loading cart items...</p>}
       </div>
     );
   }

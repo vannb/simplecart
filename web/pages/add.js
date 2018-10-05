@@ -49,7 +49,7 @@ export default class Add extends Component {
     const res = await FetchUtils.post('cart_item', map(cart,
       cartItem => ({ productId: cartItem.product.id, quantity: cartItem.quantity })));
     if (res.status === 200) {
-      Router.replace('/list');
+      Router.push('/list');
     }
   }
 
@@ -59,7 +59,7 @@ export default class Add extends Component {
     return (
       <div className="container">
         {products
-          ? <>
+          ? products.count ? <>
             <h1>Product list</h1>
             <table className="table">
               <thead>
@@ -76,8 +76,9 @@ export default class Add extends Component {
                 )}
               </tbody>
             </table>
-          </>
-          : <p>Product list is empty </p>}{cart.length
+          </> : <p>No product</p>
+          : <p>loading products...</p>}
+        {cart.length
           ? <>
             <h1>Cart</h1>
             <table className="table">
